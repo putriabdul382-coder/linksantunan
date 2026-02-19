@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donasi & Momen - PEMUDA ANNUR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .hero-gradient { background: linear-gradient(135deg, #065f46 0%, #064e3b 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); }
+        .btn-gold { background: linear-gradient(to right, #d4af37, #f1c40f); color: #1a1a1a; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="hero-gradient text-white pt-16 pb-32 px-5">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">PEMUDA ANNUR</h1>
+            <p class="text-emerald-100 text-lg mb-8 max-w-2xl mx-auto">Mengubah setiap keping donasi menjadi senyuman nyata. Bergabunglah dalam gerakan kebaikan kami.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.1000.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">konsumsi</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.600.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">ustadz</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.825.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">santunan anak yatim</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp301.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">roko kopi</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.100.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">HADROH</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.75.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">AQUA</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.12.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">CUP</div>
+                </div> 
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.2.913.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">TOTAL PENGELUARAN</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl">
+                    <div class="text-2xl font-bold">Rp.2.900.000</div>
+                    <div class="text-xs text-emerald-200 uppercase tracking-widest">TOTAL PEMASUKAN</div>
+                </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-5 -mt-20">
+        <div class="bg-white rounded-[32px] p-8 card-shadow border border-slate-100 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800">Siap Menebar Kebaikan?</h2>
+                <p class="text-slate-500">Salurkan donasi terbaik Anda melalui rekening resmi kami.</p>
+            </div>
+            <button class="btn-gold px-10 py-4 rounded-2xl font-extrabold hover:scale-105 transition-transform shadow-lg shadow-yellow-600/20">
+                DONASI SEKARANG
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                <div class="bg-slate-900 text-white p-6 rounded-[24px] sticky top-6">
+                    <h3 class="font-bold text-xl mb-4 text-emerald-400">Update Bukti Penyaluran</h3>
+                    <p class="text-slate-400 text-sm mb-6">Khusus Admin: Unggah momen penyaluran dana agar donatur merasa tenang.</p>
+                    
+                    <input type="file" id="fileInput" class="hidden" onchange="handleFile(event)">
+                    <label for="fileInput" class="block w-full text-center border-2 border-dashed border-slate-700 py-6 rounded-xl cursor-pointer hover:border-emerald-500 transition-all mb-4">
+                        <span class="text-2xl">📸</span>
+                        <p class="text-xs text-slate-500 mt-2">Klik untuk pilih foto</p>
+                    </label>
+
+                    <div id="previewBox" class="hidden space-y-4">
+                        <img id="imgPreview" class="w-full h-40 object-cover rounded-lg">
+                        <input type="text" id="descInput" placeholder="Judul Kegiatan..." class="w-full bg-slate-800 border-none rounded-lg p-3 text-sm">
+                        <button onclick="publishMomen()" class="w-full bg-emerald-600 py-3 rounded-lg font-bold text-sm">Publish Update</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <span>🎞️</span> Jejak Transparansi
+                </h3>
+                
+                <div id="galleryGrid" class="space-y-6">
+                    <div class="bg-white rounded-[24px] overflow-hidden card-shadow border border-slate-50 relative group">
+                        <button onclick="this.parentElement.remove()" class="absolute top-4 right-4 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10">✕</button>
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070" class="w-full h-72 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Santunan Yatim</span>
+                                <span class="text-slate-400 text-xs">19 Februari 2026</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Penyaluran Sembako Wilayah Garut</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Berkat donasi Anda, 50 paket sembako telah diterima oleh keluarga yang membutuhkan di Tarogong.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white mt-20 py-16 px-5">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="text-2xl font-black mb-4 tracking-widest">PEMUDA ANNUR</div>
+            <p class="text-slate-500 mb-8 italic">"Sebaik-baik manusia adalah yang paling bermanfaat bagi orang lain."</p>
+            <div class="text-slate-400 text-sm">
+                <p>Aplikasi Transparansi Donasi</p>
+                <p class="mt-2 font-bold text-emerald-500 uppercase tracking-tighter">Developed by PEMUDA ANNUR</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleFile(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    document.getElementById('imgPreview').src = event.target.result;
+                    document.getElementById('previewBox').classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function publishMomen() {
+            const grid = document.getElementById('galleryGrid');
+            const img = document.getElementById('imgPreview').src;
+            const title = document.getElementById('descInput').value || "Kegiatan Penyaluran Donasi";
+            
+            const item = document.createElement('div');
+            item.className = "bg-white rounded-[24px] overflow-hidden card-shadow border border-slate-50 relative group animate-bounce-short";
+            item.innerHTML = `
+                <button onclick="this.parentElement.remove()" class="absolute top-4 right-4 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10">✕</button>
+                <img src="${img}" class="w-full h-72 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Update Terbaru</span>
+                        <span class="text-slate-400 text-xs">Baru saja</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">${title}</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Terima kasih donatur! Laporan penyaluran dana telah diperbarui secara transparan.</p>
+                </div>
+            `;
+            grid.prepend(item);
+            document.getElementById('previewBox').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
